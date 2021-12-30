@@ -4,319 +4,665 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>CV</title>
+    <title>Curriculum Vitae</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="./scss/main.css" />
   </head>
+
   <body>
-    <header>
-      <div class="container flex-container">
-        <nav>
-          <ul class="list">
-            <li><a href="#about-me" class="link">About me</a></li>
-            <li><a href="#skills" class="link">Skills</a></li>
-            <li><a href="#eksperience" class="link">Eksperience</a></li>
-            <li><a href="#education" class="link">Education</a></li>
-          </ul>
-        </nav>
-        <p>
-          <strong><em>Front-end developer, student, artist</em></strong>
-        </p>
-        <ul class="list flex-container">
-          <li>
-            <a href="tel:+111111111" class="link" aria-label="phone number"
-              ><svg width="50px">
-                <use href="./images/sprite.svg#icon-phone"></use></svg
-            ></a>
-          </li>
-          <li>
-            <a
-              href="mailto:marina.tripetskaya@gmail.com"
-              class="link"
-              aria-label="email adress"
+    <div class="form-container">
+      <header class="header">
+        <div class="header__container">
+          <button
+            class="menu-btn"
+            type="button"
+            aria-controls="menu-container"
+            aria-expanded="false"
+            data-menu-button
+          >
+            <svg
+              class="menu-btn__icon"
+              width="40"
+              height="40"
+              aria-label="mobile menu switcher"
             >
-              <svg width="50px">
-                <use href="./images/sprite.svg#icon-email"></use></svg
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/MarinaTripetska"
-              class="link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="link to Github account"
-            >
-              <svg width="50px">
-                <use href="./images/sprite.svg#icon-github"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/maryna-tripetska-682a48184/"
-              class="link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="link to linkedin account"
-              ><svg width="50px">
-                <use href="./images/sprite.svg#icon-linkedin"></use></svg
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </header>
-
-    <main>
-      <div class="container">
-        <section id="about-me" class="section">
-          <h1>MARYNA TRIPETSKA</h1>
-          <img src="./photo.jpg" alt="Marina photo" width="200" height="200" />
-
-          <blockquote>
-            <p>
-              <em
-                >My goal is to work on creating the image of a new product with
-                a big ambitious team. I am experienced in Customer Care,
-                business communication, and quick problem-solving, also in
-                organizing and managing trips for large tourist groups. I have
-                an optimistic outlook on life and the ability to provide
-                emotional support in times of crisis. Native Ukrainian &amp;
-                Russian speaker, fluent in Polish, good in English.</em
-              >
-            </p>
-          </blockquote>
-        </section>
-        <section id="skills" class="section">
-          <ul class="list">
-            <li>
-              <h2>Languages</h2>
-              <ul class="list">
-                <li>Ukrainian | <strong>native</strong></li>
-                <li>English | <strong>B2</strong></li>
-                <li>Polish | <strong>C2</strong></li>
-                <li>Russian | <strong>C2</strong></li>
-              </ul>
-            </li>
-            <li>
-              <h2>Soft Skills</h2>
-              <ul class="list">
-                <li>Customer service &amp; support</li>
-                <li>Research &amp; translation</li>
-                <li>Decision making &amp; Independence</li>
-                <li>Multitasking &amp; work under time pressure</li>
-                <li>Attention to detail &amp; problem-solving</li>
-                <li>Time Management</li>
-                <li>Conflict resolution</li>
-              </ul>
-            </li>
-            <li>
-              <h2>Hard Skills</h2>
-              <ul class="list">
-                <li>HTML5, Markdown;</li>
-                <li>CSS3, SCSS</li>
-                <li>JavaScript</li>
-                <li>Webpack, Parcel</li>
-                <li>React</li>
-                <li>
-                  MS Office:
-                  <ul class="list">
-                    <li>Excel</li>
-                    <li>Word</li>
-                    <li>PowerPoint</li>
-                  </ul>
+              <use
+                class="menu-btn__icon--menu"
+                href="./images/sprite.svg#icon-menu"
+              ></use>
+              <use
+                class="menu-btn__icon--close"
+                href="./images/sprite.svg#icon-close"
+              ></use>
+            </svg>
+          </button>
+          <div class="modal-menu-box" id="menu-container" data-menu>
+            <nav class="nav">
+              <ul class="nav__list list">
+                <li class="nav__item">
+                  <a href="#about-me" class="link nav__link">About me</a>
                 </li>
-                <li>Salesforce, Zendesk</li>
-                <li>
-                  Art Programs:
-                  <ul class="list">
-                    <li>Figma</li>
-                    <li>Adobe Photoshop</li>
-                    <li>Adobe Illustrator</li>
-                    <li>Krita</li>
-                    <li>Zbrush</li>
-                  </ul>
+                <li class="nav__item">
+                  <a href="#skills" class="link nav__link">Skills</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#eksperience" class="link nav__link">Eksperience</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#education" class="link nav__link">Education</a>
                 </li>
               </ul>
-            </li>
-          </ul>
-        </section>
-
-        <section id="eksperience" class="section">
-          <ul class="list">
-            <li>
-              <h2>Projects</h2>
-              <ol class="list">
-                <li>
-                  <a
-                    href="https://marinatripetska.github.io/IceCream-Vector/"
-                    class="link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="link to project Icecream"
-                    >ICECREAM (HTML, SCSS, JS, Parsel)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://marinatripetska.github.io/goit-markup-hw-08/"
-                    class="link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="link to project Webstudio"
-                    >WebStudio (HTML, SCSS, JS)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://marinatripetska.github.io/timer_JS-trening/"
-                    class="link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="link to project Timer"
-                    >TIMER (JS)</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://marinatripetska.github.io/goit-js-hw-08-gallery/"
-                    class="link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="link to project Gallery"
-                    >Gallery (JS)</a
-                  >
-                </li>
-              </ol>
-            </li>
-            <li>
-              <h2>Work Eksperience</h2>
-              <p>
-                <strong
-                  >Integrations Support Specialist, <em>Talixo</em></strong
+            </nav>
+            <ul class="contacts list">
+              <li class="contacts__item">
+                <a
+                  href="tel:+48791576144"
+                  class="link"
+                  aria-label="phone number"
+                  ><svg class="contacts__svg">
+                    <use href="./images/sprite.svg#icon-phone"></use></svg
+                ></a>
+              </li>
+              <li class="contacts__item">
+                <a
+                  href="mailto:marina.tripetskaya@gmail.com"
+                  class="link"
+                  aria-label="email adress"
                 >
-                May 2019 – May 2020 | Kraków
-              </p>
-              <ul class="list">
-                <li>accepting and entering bookings into the system</li>
-                <li>
-                  communicating between branches to ensure the best customer
-                  service
-                </li>
-                <li>communicating with business partners</li>
-                <li>
-                  creating new products and prices, introducing offers on
-                  partner platforms, creating the company&#39;s image
-                </li>
-                <li>
-                  supporting new team members and working with a remote team
-                </li>
-                <li>
-                  assisting business and individual clients over the phone and
-                  email
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h2>Example of my Code</h2>
-              <ul class="list">
-                <li>
-                  <pre>
-          <code> 
-              <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>{
+                  <svg class="contacts__svg">
+                    <use href="./images/sprite.svg#icon-email"></use></svg
+                ></a>
+              </li>
+              <li class="contacts__item">
+                <a
+                  href="https://github.com/MarinaTripetska"
+                  class="link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="link to Github account"
+                >
+                  <svg class="contacts__svg">
+                    <use href="./images/sprite.svg#icon-github"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="contacts__item">
+                <a
+                  href="https://www.linkedin.com/in/maryna-tripetska-682a48184/"
+                  class="link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="link to linkedin account"
+                  ><svg class="contacts__svg">
+                    <use href="./images/sprite.svg#icon-linkedin"></use></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
 
-  <span class="hljs-keyword">const</span> arr = str.split(<span class="hljs-string">' '</span>).map(<span class="hljs-function">(<span class="hljs-params">elem</span>) =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${elem[<span class="hljs-number">0</span>].toUpperCase()}</span><span class="hljs-subst">${elem.substring(<span class="hljs-number">1</span>)}</span>`</span>)
- <span class="hljs-keyword">return</span> arr.join(<span class="hljs-string">' '</span>)
-};
-</code>
-</pre>
-                </li>
-                <li>
-                  <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatDuration</span> (<span class="hljs-params">seconds</span>) </span>{
-    <span class="hljs-keyword">let</span> s = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Number</span>(seconds));
-    <span class="hljs-keyword">if</span> (s === <span class="hljs-number">0</span>) {
-        <span class="hljs-keyword">return</span> <span class="hljs-string">'now'</span>
-    } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">let</span> year = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>))
-        s -= <span class="hljs-built_in">Math</span>.floor(year * (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-        <span class="hljs-keyword">let</span> day = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-        s -= <span class="hljs-built_in">Math</span>.floor(day * (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-        <span class="hljs-keyword">let</span> h = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-        s -= <span class="hljs-built_in">Math</span>.floor(h * (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-        <span class="hljs-keyword">let</span> m = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span>));
-        s -= <span class="hljs-built_in">Math</span>.floor(m * (<span class="hljs-number">60</span>));
+      <main class="main">
+        <div class="main__container">
+          <section id="about-me" class="section">
+            <div class="banner">
+              <div class="banner__heading-box">
+                <h1 class="heading">MARYNA TRIPETSKA</h1>
+                <p class="heading__sub">
+                  junior Front-end developer, student, artist
+                </p>
+                <p class="heading__subscribe">
+                  I'm an enthusiastic and detail-oriented Junior Frontend
+                  Developer seeking an entry-level position with Company to use
+                  my skills in coding, troubleshooting complex problems, and
+                  assisting in the timely completion of projects.
+                </p>
+              </div>
+              <div class="foto">
+                <div class="foto__circle"></div>
+                <img
+                  class="foto__img"
+                  src="./photo.jpg"
+                  alt="My photo"
+                  width="350"
+                  height="350"
+                />
+              </div>
+            </div>
+          </section>
+          <div class="columns">
+            <div class="column-1">
+              <section id="skills" class="section">
+                <ul class="list">
+                  <li>
+                    <h2 class="section-title languages">Languages</h2>
+                    <ul class="list">
+                      <li class="languages__item">
+                        Ukrainian |
+                        <span class="languages__item-lvl"> Native</span>
+                      </li>
+                      <li class="languages__item">
+                        English | <span class="languages__item-lvl"> B1</span>
+                      </li>
+                      <li class="languages__item">
+                        Polish | <span class="languages__item-lvl"> C2</span>
+                      </li>
+                      <li class="languages__item">
+                        Russian | <span class="languages__item-lvl"> C2</span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h2 class="section-title soft-skills">Soft Skills</h2>
+                    <ul class="list">
+                      <li class="soft-skills__item">
+                        Customer service &amp; support
+                      </li>
+                      <li class="soft-skills__item">
+                        Research &amp; translation
+                      </li>
+                      <li class="soft-skills__item">
+                        Decision making &amp; Independence
+                      </li>
+                      <li class="soft-skills__item">
+                        Multitasking &amp; work under time pressure
+                      </li>
+                      <li class="soft-skills__item">
+                        Attention to detail &amp; problem-solving
+                      </li>
+                      <li class="soft-skills__item">Time Management</li>
+                      <li class="soft-skills__item">Conflict resolution</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h2 class="section-title hard-skills">Hard Skills</h2>
+                    <ul class="list">
+                      <li class="hard-skills__item">HTML5, Markdown</li>
+                      <li class="hard-skills__item">CSS3, SCSS</li>
+                      <li class="hard-skills__item">JavaScript</li>
+                      <li class="hard-skills__item">Webpack, Parcel</li>
+                      <li class="hard-skills__item">Git</li>
+                      <!-- <li class="hard-skills__item">React</li> -->
+                      <!-- <li class="hard-skills__item">
+                        <p>MS Office:</p>
+                        <ul class="">
+                          <li>Excel</li>
+                          <li>Word</li>
+                          <li>PowerPoint</li>
+                        </ul>
+                      </li> -->
+                      <!-- <li class="hard-skills__item">Salesforce, Zendesk</li> -->
+                      <!-- <li class="hard-skills__item">
+                        <p>Art Programs:</p>
+                        <ul class="">
+                          <li>Figma</li>
+                          <li>Adobe Photoshop</li>
+                          <li>Adobe Illustrator</li>
+                          <li>Krita</li>
+                          <li>Zbrush</li>
+                        </ul>
+                      </li> -->
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+              <section id="education" class="section">
+                <h2 class="section-title">Education</h2>
+                <ul class="list education__set">
+                  <li class="education__item">
+                    <div>
+                      <p>
+                        <strong>GoIT</strong> | <em>Fullstack Developer</em>
+                      </p>
+                      <p>Apr - Dec, 2021</p>
+                    </div>
+                  </li>
 
-        <span class="hljs-keyword">const</span> yearDisplay = year &gt; <span class="hljs-number">0</span> ? + year + (year === <span class="hljs-number">1</span> ? <span class="hljs-string">` year`</span> : <span class="hljs-string">` years`</span>) : <span class="hljs-string">''</span>;
-        <span class="hljs-keyword">const</span> dayDisplay = day &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; h === <span class="hljs-number">0</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">365</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + day + (day === <span class="hljs-number">1</span> ? <span class="hljs-string">` day`</span> : <span class="hljs-string">` days`</span>) : <span class="hljs-string">''</span>;
-        <span class="hljs-keyword">const</span> hDisplay = h &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + h + (h === <span class="hljs-number">1</span> ? <span class="hljs-string">` hour`</span> : <span class="hljs-string">` hours`</span>) : <span class="hljs-string">''</span>;
-        <span class="hljs-keyword">const</span> mDisplay = m &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (s !== <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + m + (m === <span class="hljs-number">1</span> ? <span class="hljs-string">` minute`</span> : <span class="hljs-string">` minutes`</span>) : <span class="hljs-string">''</span>;
-        <span class="hljs-keyword">const</span> sDisplay = s &gt; <span class="hljs-number">0</span> ? (seconds &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">` and `</span> : <span class="hljs-string">''</span>) + s + (s === <span class="hljs-number">1</span> ? <span class="hljs-string">` second`</span> : <span class="hljs-string">` seconds`</span>) : <span class="hljs-string">''</span>;
+                  <li class="education__item">
+                    <div>
+                      <p>
+                        <strong>RS Shool</strong> |
+                        <em> JavaScript/Front-end</em>
+                      </p>
+                      <p>Sep 2021 - Mar, 2022</p>
+                    </div>
+                  </li>
 
-        <span class="hljs-keyword">const</span> display = yearDisplay + dayDisplay + hDisplay + mDisplay + sDisplay;
-        <span class="hljs-keyword">return</span> display
-    }
-}
-</code></pre>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
+                  <li class="education__item">
+                    <div>
+                      <p><strong>Cracow University of Economics</strong></p>
+                      <p><em> International Touris</em>m</p>
+                      <p>Master’s degree | Oct 2014 – Oct 2017</p>
+                    </div>
+                  </li>
+                  <li class="education__item">
+                    <div>
+                      <p>
+                        <strong>A. F. Modrzewski Krakow University</strong>
+                      </p>
+                      <p><em>IInternational Relations</em></p>
+                      <p>Bachelor degree | Oct 2011 – Jun, 2014</p>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h2 class="section-title wkork">Work Eksperience</h2>
+                <p class="work__position">
+                  Integrations Support Specialist,
+                  <span class="work__name">Talixo</span>
+                </p>
+                <p class="work__period">May 2019 – May 2020 | Kraków</p>
 
-        <section id="education" class="section">
-          <h2>Education</h2>
-          <ul class="list">
-            <li>
-              <strong>GoIT</strong> | Fullstack Developer | Apr - Dec, 2021
-            </li>
-            <li>
-              <strong>RS Shool</strong> | JavaScript/Front-end | Sep 2021 - Mar
-              2022
-            </li>
-            <li>
-              <p><strong>Cracow University of Economics</strong></p>
-              <p><em>International Tourism</em></p>
-              <p>Master’s degree | Oct 2014 – Oct 2017</p>
-            </li>
-            <li>
-              <p><strong>Andrzej Frycz Modrzewski Krakow University</strong></p>
-              <p><em>International Relations</em></p>
-              <p>Bachelor degree | Oct 2011 – Jun 2014</p>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </main>
+                <ul class="list task task__list">
+                  <li class="task__item">
+                    accepting and entering bookings into the system
+                  </li>
 
-    <footer>
-      <div class="container flex-conteiner">
-        <p>&#169; 2021 by Marina Tripetska</p>
+                  <li class="task__item">
+                    communicating with business partners
+                  </li>
+                  <li class="task__item">creating new products and prices</li>
+                  <li class="task__item">
+                    introducing offers on partner platforms
+                  </li>
+                  <li class="task__item">
+                    supporting and mentoring new team members
+                  </li>
+                  <li class="task__item">
+                    assisting business and individual clients
+                  </li>
+                </ul>
+              </section>
+            </div>
+            <div class="column-2">
+              <section id="eksperience" class="section">
+                <h2 class="section-title">Projects</h2>
+                <ol class="list projects__set">
+                  <li class="projects__item">
+                    <article class="project project__box">
+                      <h3 class="project__name">IceCream</h3>
+                      <a
+                        href="https://marinatripetska.github.io/IceCream-Vector/"
+                        class="link project__link-icon"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="link to project Icecream"
+                      >
+                        <div class="project__icon-thumb">
+                          <img
+                            class="project__icon"
+                            src="./images/screen-icecream.jpg"
+                            alt="screen Icecream page"
+                          />
+                        </div>
+                      </a>
 
-        <a
-          href="https://github.com/MarinaTripetska"
-          class="link"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="link to Github account"
-        >
-          <svg width="50px">
-            <use href="./images/sprite.svg#icon-github"></use>
-          </svg>
-        </a>
+                      <p class="project__sbc">
+                        Team project (one week hackathon)
+                      </p>
+                      <p class="project__sbc">
+                        This project was realized by the best team with 4
+                        students of GoIT School, after first module of Full
+                        Stack developer course. We used technologies we learned
+                        on course and then presented the finished product to
+                        other teams. We have learned teamplaing work, practised
+                        Scrum metodology and Agile filosofy, we used Trello for
+                        do tasks, provided code review and work with branches
+                        using Git.
+                      </p>
 
-        <a
-          href="https://rs.school/js-stage0/"
-          class="link"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="link to RS School"
-        >
-          <img
-            src="./images/logo-rsschool.svg"
-            alt="Logo RS School"
-            width="100"
-          />
-        </a>
-      </div>
-    </footer>
+                      <ul class="list metodologies">
+                        <li class="metodologies__item">HTML5</li>
+                        <li class="metodologies__item">SCSS</li>
+                        <li class="metodologies__item">BEM</li>
+                        <li class="metodologies__item">JS</li>
+                        <li class="metodologies__item">Parsel</li>
+                      </ul>
+                      <div class="project__link-thumb">
+                        <a
+                          href=" https://marinatripetska.github.io/IceCream-Vector/"
+                          class="link project__link-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="link to project IceCream"
+                          >Page</a
+                        >
+                        <a
+                          href="https://github.com/MarinaTripetska/IceCream-Vector"
+                          class="link project__link-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="link to code project IceCream"
+                          >Code</a
+                        >
+                      </div>
+                    </article>
+                  </li>
+
+                  <li class="projects__item">
+                    <article class="project project__box">
+                      <h3 class="project__name">Webstudio</h3>
+                      <a
+                        href="https://marinatripetska.github.io/goit-markup-hw-08/"
+                        class="link project__link-icon"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="link to project WebStudio"
+                      >
+                        <div class="project__icon-thumb">
+                          <img
+                            class="project__icon"
+                            src="./images/screen-webstudio.jpg"
+                            alt="screen Webstudio page"
+                            width="200"
+                            height="200"
+                          />
+                        </div>
+                      </a>
+
+                      <p class="project__sbc">
+                        This project was realized during the first module of
+                        Full Stack developer course in GoIT School.
+                      </p>
+
+                      <ul class="list metodologies">
+                        <li class="metodologies__item">HTML5</li>
+                        <li class="metodologies__item">SCSS</li>
+                        <li class="metodologies__item">BEM</li>
+                        <li class="metodologies__item">JS</li>
+                      </ul>
+                      <div class="project__link-thumb">
+                        <a
+                          href="https://marinatripetska.github.io/goit-markup-hw-08/"
+                          class="link project__link-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="link to project WebStudio"
+                          >Page</a
+                        >
+                        <a
+                          href="https://github.com/MarinaTripetska/goit-markup-hw-08"
+                          class="link project__link-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="link to code project WebStudio"
+                          >Code</a
+                        >
+                      </div>
+                    </article>
+                  </li>
+
+                  <li class="projects__item">
+                    <article class="project project__box">
+                      <h3 class="project__name">Museum</h3>
+                      <a
+                        href="https://rolling-scopes-school.github.io/marinatripetska-JSFE2021Q3/museum-dom/"
+                        class="link project__link-icon"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="link to project Museum"
+                      >
+                        <div class="project__icon-thumb">
+                          <img
+                            class="project__icon"
+                            src="./images/screen-museum.jpg"
+                            alt="screen page Museum"
+                            width="200"
+                            height="200"
+                          />
+                        </div>
+                      </a>
+
+                      <p class="project__sbc">
+                        This project was realized during JavaScript/Front-end
+                        developer course in RS School. My Museum page is not
+                        finished product, I still create this page when I have
+                        time.
+                      </p>
+
+                      <ul class="list metodologies">
+                        <li class="metodologies__item">HTML5</li>
+                        <li class="metodologies__item">SCSS</li>
+                        <li class="metodologies__item">JS</li>
+                      </ul>
+                      <div class="project__link-thumb">
+                        <a
+                          href="https://rolling-scopes-school.github.io/marinatripetska-JSFE2021Q3/museum-dom/"
+                          class="link project__link-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="link to project Museum"
+                          >Page</a
+                        >
+                      </div>
+                    </article>
+                  </li>
+
+                  <li class="projects__item">
+                    <article class="project project__box">
+                      <h3 class="project__name">Filmoteka</h3>
+                      <a
+                        href="https://telekaster.github.io/eighternity_filmoteka/"
+                        class="link project__link-icon"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="link to project Gallery"
+                      >
+                        <div class="project__icon-thumb">
+                          <img
+                            class="project__icon"
+                            src="./images/screen-filmoteka.jpg"
+                            alt="screen Filmoteka page"
+                            width="200"
+                            height="200"
+                          />
+                        </div>
+                      </a>
+                      <p class="project__sbc">
+                        Team project (two week hackathon)
+                      </p>
+
+                      <p class="project__sbc">
+                        This project was realized by Eighternity team with 8
+                        students of GoIT School, after second module of Full
+                        Stack developer course. We used technologies we learned
+                        on course and then presented the finished product to
+                        other teams. We have learned teamplaing work, we used
+                        Trello for do tasks and work with branches using Git. I
+                        was responsible for header adaptivity and js
+                        slide-effect, fetches in Library section, button-up
+                        styling and js, intersection observer effects, bug
+                        fixes.
+                      </p>
+
+                      <ul class="list metodologies">
+                        <li class="metodologies__item">HTML5</li>
+                        <li class="metodologies__item">SCSS</li>
+                        <li class="metodologies__item">JS</li>
+                        <li class="metodologies__item">Parsel</li>
+                        <li class="metodologies__item">Git</li>
+                      </ul>
+
+                      <div class="project__link-thumb">
+                        <a
+                          href="https://telekaster.github.io/eighternity_filmoteka/"
+                          class="link project__link-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="link to project Filmoteka"
+                          >Page</a
+                        >
+
+                        <a
+                          href="https://github.com/Telekaster/eighternity_filmoteka"
+                          class="link project__link-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="link to code project Filmoteka"
+                          >Code</a
+                        >
+                      </div>
+                    </article>
+                  </li>
+                </ol>
+              </section>
+
+              <section class="section section-example-1">
+                <h2 class="section-title">Example of my Code</h2>
+                <ul class="list">
+                  <li>
+                    <pre>
+            <code> 
+                <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>{
+  
+    <span class="hljs-keyword">const</span> arr = str.split(<span class="hljs-string">' '</span>).map(<span class="hljs-function">(<span class="hljs-params">elem</span>) =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${elem[<span class="hljs-number">0</span>].toUpperCase()}</span><span class="hljs-subst">${elem.substring(<span class="hljs-number">1</span>)}</span>`</span>)
+   <span class="hljs-keyword">return</span> arr.join(<span class="hljs-string">' '</span>)
+  };
+  </code>
+  </pre>
+                  </li>
+                  <li>
+                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatDuration</span> (<span class="hljs-params">seconds</span>) </span>{
+      <span class="hljs-keyword">let</span> s = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Number</span>(seconds));
+      <span class="hljs-keyword">if</span> (s === <span class="hljs-number">0</span>) {
+          <span class="hljs-keyword">return</span> <span class="hljs-string">'now'</span>
+      } <span class="hljs-keyword">else</span> {
+          <span class="hljs-keyword">let</span> year = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>))
+          s -= <span class="hljs-built_in">Math</span>.floor(year * (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+          <span class="hljs-keyword">let</span> day = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+          s -= <span class="hljs-built_in">Math</span>.floor(day * (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+          <span class="hljs-keyword">let</span> h = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+          s -= <span class="hljs-built_in">Math</span>.floor(h * (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+          <span class="hljs-keyword">let</span> m = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span>));
+          s -= <span class="hljs-built_in">Math</span>.floor(m * (<span class="hljs-number">60</span>));
+  
+          <span class="hljs-keyword">const</span> yearDisplay = year &gt; <span class="hljs-number">0</span> ? + year + (year === <span class="hljs-number">1</span> ? <span class="hljs-string">` year`</span> : <span class="hljs-string">` years`</span>) : <span class="hljs-string">''</span>;
+          <span class="hljs-keyword">const</span> dayDisplay = day &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; h === <span class="hljs-number">0</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">365</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + day + (day === <span class="hljs-number">1</span> ? <span class="hljs-string">` day`</span> : <span class="hljs-string">` days`</span>) : <span class="hljs-string">''</span>;
+          <span class="hljs-keyword">const</span> hDisplay = h &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + h + (h === <span class="hljs-number">1</span> ? <span class="hljs-string">` hour`</span> : <span class="hljs-string">` hours`</span>) : <span class="hljs-string">''</span>;
+          <span class="hljs-keyword">const</span> mDisplay = m &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (s !== <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + m + (m === <span class="hljs-number">1</span> ? <span class="hljs-string">` minute`</span> : <span class="hljs-string">` minutes`</span>) : <span class="hljs-string">''</span>;
+          <span class="hljs-keyword">const</span> sDisplay = s &gt; <span class="hljs-number">0</span> ? (seconds &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">` and `</span> : <span class="hljs-string">''</span>) + s + (s === <span class="hljs-number">1</span> ? <span class="hljs-string">` second`</span> : <span class="hljs-string">` seconds`</span>) : <span class="hljs-string">''</span>;
+  
+          <span class="hljs-keyword">const</span> display = yearDisplay + dayDisplay + hDisplay + mDisplay + sDisplay;
+          <span class="hljs-keyword">return</span> display
+      }
+  }
+                   </code></pre>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <section class="section section-example-2">
+            <h2 class="section-title">Examples of my Code</h2>
+            <ul class="list">
+              <li>
+                <pre>
+              <code> 
+                <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>{
+  
+                <span class="hljs-keyword">const</span> arr = str.split(<span class="hljs-string">' '</span>).map(<span class="hljs-function">(<span class="hljs-params">elem</span>) =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${elem[<span class="hljs-number">0</span>].toUpperCase()}</span><span class="hljs-subst">${elem.substring(<span class="hljs-number">1</span>)}</span>`</span>)
+                <span class="hljs-keyword">return</span> arr.join(<span class="hljs-string">' '</span>)
+                  };
+                </code>
+             </pre>
+              </li>
+              <li>
+                <pre>
+                <code>
+                  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatDuration</span> (<span class="hljs-params">seconds</span>) </span>{
+                  <span class="hljs-keyword">let</span> s = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Number</span>(seconds));
+                  <span class="hljs-keyword">if</span> (s === <span class="hljs-number">0</span>) {
+                  <span class="hljs-keyword">return</span> <span class="hljs-string">'now'</span>
+                  } <span class="hljs-keyword">else</span> {
+                   <span class="hljs-keyword">let</span> year = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>))
+                   s -= <span class="hljs-built_in">Math</span>.floor(year * (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+                   <span class="hljs-keyword">let</span> day = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+                   s -= <span class="hljs-built_in">Math</span>.floor(day * (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+                   <span class="hljs-keyword">let</span> h = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+                  s -= <span class="hljs-built_in">Math</span>.floor(h * (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
+                   <span class="hljs-keyword">let</span> m = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span>));
+                   s -= <span class="hljs-built_in">Math</span>.floor(m * (<span class="hljs-number">60</span>));
+  
+                  <span class="hljs-keyword">const</span> yearDisplay = year &gt; <span class="hljs-number">0</span> ? + year + (year === <span class="hljs-number">1</span> ? <span class="hljs-string">` year`</span> : <span class="hljs-string">` years`</span>) : <span class="hljs-string">''</span>;
+                  <span class="hljs-keyword">const</span> dayDisplay = day &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; h === <span class="hljs-number">0</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">365</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + day + (day === <span class="hljs-number">1</span> ? <span class="hljs-string">` day`</span> : <span class="hljs-string">` days`</span>) : <span class="hljs-string">''</span>;
+                  <span class="hljs-keyword">const</span> hDisplay = h &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + h + (h === <span class="hljs-number">1</span> ? <span class="hljs-string">` hour`</span> : <span class="hljs-string">` hours`</span>) : <span class="hljs-string">''</span>;
+                  <span class="hljs-keyword">const</span> mDisplay = m &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (s !== <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + m + (m === <span class="hljs-number">1</span> ? <span class="hljs-string">` minute`</span> : <span class="hljs-string">` minutes`</span>) : <span class="hljs-string">''</span>;
+                  <span class="hljs-keyword">const</span> sDisplay = s &gt; <span class="hljs-number">0</span> ? (seconds &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">` and `</span> : <span class="hljs-string">''</span>) + s + (s === <span class="hljs-number">1</span> ? <span class="hljs-string">` second`</span> : <span class="hljs-string">` seconds`</span>) : <span class="hljs-string">''</span>;
+  
+                  <span class="hljs-keyword">const</span> display = yearDisplay + dayDisplay + hDisplay + mDisplay + sDisplay;
+                 <span class="hljs-keyword">return</span> display
+                     }
+                    }
+                </code>
+              </pre>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__container">
+          <p class="author">&#169; 2021 by Marina Tripetska</p>
+
+          <a
+            href="https://github.com/MarinaTripetska"
+            class="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="link to Github account"
+          >
+            <svg class="gh-img">
+              <use href="./images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+          <div class="links-container">
+            <a
+              href="https://goit.ua/fullstackonline/ua/"
+              class="link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="link to GoIT School"
+            >
+              <img src="./images/logo.jpg" alt="Logo RS School" width="100" />
+            </a>
+            <a
+              href="https://rs.school/js-stage0/"
+              class="link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="link to RS School"
+            >
+              <img
+                src="./images/logo-rsschool.svg"
+                alt="Logo RS School"
+                width="100"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
