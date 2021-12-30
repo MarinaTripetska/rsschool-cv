@@ -2,6 +2,8 @@
 
 # MARYNA TRIPETSKA
 
+![Marina photo](./photo.jpg)
+
 > _My goal is to work on creating the image of a new product with a big ambitious team. I am experienced in Customer Care, business communication, and quick problem-solving, also in organizing and managing trips for large tourist groups. I have an optimistic outlook on life and the ability to provide emotional support in times of crisis. Native Ukrainian & Russian speaker, fluent in Polish, good in English._
 
 ## Contacts
