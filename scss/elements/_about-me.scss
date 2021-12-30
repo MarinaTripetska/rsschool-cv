@@ -1,0 +1,114 @@
+.banner {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+}
+
+.banner__heading-box {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+
+    @media screen and(max-width:767px) {
+        margin-left: 0;
+        padding-top: 30px;
+    }
+}
+
+.heading {
+    text-align: center;
+    color: var(--title-text-cl);
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 15px;
+    }
+
+    @media screen and(min-width: 768px) {
+        font-size: 24px;
+        letter-spacing: 0.4em;
+        padding: 20px 50px;
+        border: 3px solid var(--title-text-cl);
+    }
+}
+
+.heading__sub {
+    font-weight: 500;
+    font-style: italic;
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 15px;
+    }
+
+    @media screen and(min-width: 768px) {
+        position: relative;
+        bottom: 15px;
+        padding: 0 5px;
+        background-color: var(--bg-color);
+        margin-bottom: 20px;
+        z-index: 1;
+    }
+}
+
+.heading__subscribe {
+    flex: 1 1;
+    font-style: italic;
+    max-width: 400px;
+    text-align: center;
+    @media screen and(min-width:768px) {
+        max-width: 300px;
+    }
+    @media screen and(min-width:1200px){
+        max-width: 600px;
+    }
+}
+
+.foto {
+    align-self: center;
+    position: relative;
+}
+
+.foto__circle {
+    position: absolute;
+    left: -15px;
+    top: 40px;
+    width: 250px;
+    height: 250px;
+
+    background-image: url(../images/circle.com);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media screen and(min-width: 300px) {
+        left: -10px;
+        top: 30px;
+        width: 280px;
+        height: 280px;
+
+    }
+
+    @media screen and(min-width:380px) {
+        width: 340px;
+        height: 340px;
+        align-self: center;
+    }
+
+    @media screen and (min-width: 767px) {
+        top: 10px;
+        width: 400px;
+        height: 400px;
+    }
+}
+
+.foto__img {
+    border-radius: 50%;
+}
