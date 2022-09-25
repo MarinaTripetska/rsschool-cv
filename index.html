@@ -39,6 +39,7 @@
             aria-expanded="false"
             data-menu-button
           >
+          Some txt
             <svg class="menu-btn__icon" width="40" height="40">
               <use
                 class="menu-btn__icon--menu"
@@ -346,7 +347,6 @@
                           >
                         </div>
                       </a>
-
                       <p class="project__sbc">
                         This project was realized during the first module of
                         Full Stack developer course in GoIT School.
@@ -497,39 +497,12 @@
   </code>
   </pre>
                   </li>
-                  <li>
-                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatDuration</span> (<span class="hljs-params">seconds</span>) </span>{
-      <span class="hljs-keyword">let</span> s = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Number</span>(seconds));
-      <span class="hljs-keyword">if</span> (s === <span class="hljs-number">0</span>) {
-          <span class="hljs-keyword">return</span> <span class="hljs-string">'now'</span>
-      } <span class="hljs-keyword">else</span> {
-          <span class="hljs-keyword">let</span> year = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>))
-          s -= <span class="hljs-built_in">Math</span>.floor(year * (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-          <span class="hljs-keyword">let</span> day = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-          s -= <span class="hljs-built_in">Math</span>.floor(day * (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-          <span class="hljs-keyword">let</span> h = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-          s -= <span class="hljs-built_in">Math</span>.floor(h * (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-          <span class="hljs-keyword">let</span> m = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span>));
-          s -= <span class="hljs-built_in">Math</span>.floor(m * (<span class="hljs-number">60</span>));
-            <span class="hljs-keyword">const</span> yearDisplay = year &gt; <span class="hljs-number">0</span> ? + year + (year === <span class="hljs-number">1</span> ? <span class="hljs-string">` year`</span> : <span class="hljs-string">` years`</span>) : <span class="hljs-string">''</span>;
-          <span class="hljs-keyword">const</span> dayDisplay = day &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; h === <span class="hljs-number">0</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">365</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + day + (day === <span class="hljs-number">1</span> ? <span class="hljs-string">` day`</span> : <span class="hljs-string">` days`</span>) : <span class="hljs-string">''</span>;
-          <span class="hljs-keyword">const</span> hDisplay = h &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + h + (h === <span class="hljs-number">1</span> ? <span class="hljs-string">` hour`</span> : <span class="hljs-string">` hours`</span>) : <span class="hljs-string">''</span>;
-          <span class="hljs-keyword">const</span> mDisplay = m &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (s !== <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + m + (m === <span class="hljs-number">1</span> ? <span class="hljs-string">` minute`</span> : <span class="hljs-string">` minutes`</span>) : <span class="hljs-string">''</span>;
-          <span class="hljs-keyword">const</span> sDisplay = s &gt; <span class="hljs-number">0</span> ? (seconds &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">` and `</span> : <span class="hljs-string">''</span>) + s + (s === <span class="hljs-number">1</span> ? <span class="hljs-string">` second`</span> : <span class="hljs-string">` seconds`</span>) : <span class="hljs-string">''</span>;
-            <span class="hljs-keyword">const</span> display = yearDisplay + dayDisplay + hDisplay + mDisplay + sDisplay;
-          <span class="hljs-keyword">return</span> display
-      }
-  }
-                   </code></pre>
-                  </li>
-                </ul>
+                 </ul>
               </section>
             </div>
           </div>
           <section class="section section-example-2">
-            <h2 class="section-title">Examples of my Code</h2>
-            <ul class="list">
-              <li>
+            <h2 class="section-title">Examples of my Code</h2>       
                 <pre>
               <code> 
                 <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">str</span>) </span>{
@@ -538,37 +511,7 @@
                   };
                 </code>
              </pre>
-              </li>
-              <li>
-                <pre>
-                <code>
-                  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatDuration</span> (<span class="hljs-params">seconds</span>) </span>{
-                  <span class="hljs-keyword">let</span> s = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Number</span>(seconds));
-                  <span class="hljs-keyword">if</span> (s === <span class="hljs-number">0</span>) {
-                  <span class="hljs-keyword">return</span> <span class="hljs-string">'now'</span>
-                  } <span class="hljs-keyword">else</span> {
-                   <span class="hljs-keyword">let</span> year = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>))
-                   s -= <span class="hljs-built_in">Math</span>.floor(year * (<span class="hljs-number">365</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-                   <span class="hljs-keyword">let</span> day = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-                   s -= <span class="hljs-built_in">Math</span>.floor(day * (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-                   <span class="hljs-keyword">let</span> h = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-                  s -= <span class="hljs-built_in">Math</span>.floor(h * (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>));
-                   <span class="hljs-keyword">let</span> m = <span class="hljs-built_in">Math</span>.floor(s / (<span class="hljs-number">60</span>));
-                   s -= <span class="hljs-built_in">Math</span>.floor(m * (<span class="hljs-number">60</span>));
-                    <span class="hljs-keyword">const</span> yearDisplay = year &gt; <span class="hljs-number">0</span> ? + year + (year === <span class="hljs-number">1</span> ? <span class="hljs-string">` year`</span> : <span class="hljs-string">` years`</span>) : <span class="hljs-string">''</span>;
-                  <span class="hljs-keyword">const</span> dayDisplay = day &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; h === <span class="hljs-number">0</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">365</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + day + (day === <span class="hljs-number">1</span> ? <span class="hljs-string">` day`</span> : <span class="hljs-string">` days`</span>) : <span class="hljs-string">''</span>;
-                  <span class="hljs-keyword">const</span> hDisplay = h &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; m === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (seconds / (<span class="hljs-number">60</span> * <span class="hljs-number">60</span>) &gt; <span class="hljs-number">23</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + h + (h === <span class="hljs-number">1</span> ? <span class="hljs-string">` hour`</span> : <span class="hljs-string">` hours`</span>) : <span class="hljs-string">''</span>;
-                  <span class="hljs-keyword">const</span> mDisplay = m &gt; <span class="hljs-number">0</span> ? (s === <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">' and '</span> : <span class="hljs-string">''</span>) + (s !== <span class="hljs-number">0</span> &amp;&amp; seconds / (<span class="hljs-number">60</span>) &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">', '</span> : <span class="hljs-string">''</span>) + m + (m === <span class="hljs-number">1</span> ? <span class="hljs-string">` minute`</span> : <span class="hljs-string">` minutes`</span>) : <span class="hljs-string">''</span>;
-                  <span class="hljs-keyword">const</span> sDisplay = s &gt; <span class="hljs-number">0</span> ? (seconds &gt; <span class="hljs-number">59</span> ? <span class="hljs-string">` and `</span> : <span class="hljs-string">''</span>) + s + (s === <span class="hljs-number">1</span> ? <span class="hljs-string">` second`</span> : <span class="hljs-string">` seconds`</span>) : <span class="hljs-string">''</span>;
-                    <span class="hljs-keyword">const</span> display = yearDisplay + dayDisplay + hDisplay + mDisplay + sDisplay;
-                 <span class="hljs-keyword">return</span> display
-                     }
-                    }
-                </code>
-              </pre>
-              </li>
-            </ul>
-          </section>
+              </section>
         </div>
       </main>
       <footer class="footer">
